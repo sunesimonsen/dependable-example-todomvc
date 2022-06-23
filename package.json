@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "private": true,
+  "name": "dependable-example-todomvc",
+  "version": "1.0.0",
+  "description": "TodoMVC example using @dependable",
+  "author": "Sune Simonsen",
+  "license": "MIT",
+  "scripts": {
+    "start": "relivestyle --port 5000 public",
+    "build": "rm -rf dist && rollup -c node:@dependable/rollup-config",
+    "deploy": "yarn build && surge dist dependable-example-todomvc.surge.sh"
+  },
+  "devDependencies": {
+    "@dependable/rollup-config": "^0.3.0",
+    "relivestyle": "^1.0.0-11",
+    "surge": "^0.23.1"
+  },
+  "dependencies": {
+    "@dependable/state": "^0.6.2",
+    "@dependable/view": "^0.6.1"
+  }
+}
