@@ -5,7 +5,7 @@ export const api = observable(apiFunctions);
 
 export const visibilityFilter = observable("all");
 
-const allTodos = observable([]);
+export const allTodos = observable([]);
 
 const createdAtComparison = (a, b) => {
   const aCreatedAt = new Date(a.createdAt);
@@ -45,7 +45,7 @@ const todosById = computed(() => {
 
 export const activeTodoCount = computed(() => activeTodos().length);
 
-class Todo {
+export class Todo {
   constructor({ id, text, createdAt, completed = false }) {
     this.id = id;
     this.text = observable(text);
@@ -59,7 +59,9 @@ class Todo {
   }
 
   async save() {
-    await api().updateTodo(this.toJSON());
+    const response = await api().updateTodo(this.toJSON());
+    this.text(response.text);
+    this.completed(response.completed);
   }
 
   async destroy() {
