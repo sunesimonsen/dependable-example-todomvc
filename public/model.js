@@ -60,8 +60,6 @@ export class Todo {
 
   async save() {
     const response = await api().updateTodo(this.toJSON());
-    this.text(response.text);
-    this.completed(response.completed);
   }
 
   async destroy() {
