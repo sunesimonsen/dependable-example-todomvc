@@ -9,7 +9,7 @@
   "scripts": {
     "start": "relivestyle --port 5000 public",
     "build": "rm -rf dist && rollup -c node:@dependable/rollup-config",
-    "deploy": "yarn build && surge dist dependable-example-todomvc.surge.sh",
+    "deploy": "npm run build && surge dist dependable-example-todomvc.surge.sh",
     "test": "mocha"
   },
   "devDependencies": {
