@@ -13,7 +13,7 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "@dependable/rollup-config": "^0.3.0",
+    "@dependable/rollup-config": "^0.4.0",
     "mocha": "^10.0.0",
     "relivestyle": "^1.0.0-11",
     "surge": "^0.23.1",
