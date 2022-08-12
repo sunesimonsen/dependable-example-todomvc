@@ -1,7 +1,12 @@
 import { html, render } from "@dependable/view";
 import { RootView } from "./components/RootView.js";
-import { loadTodos } from "./model.js";
+import { Api } from "./Api.js";
 
-loadTodos();
-
-render(html`<${RootView} />`, document.getElementById("app"));
+render(
+  html`
+    <Context api=${new Api()}>
+      <${RootView} />
+    <//>
+  `,
+  document.getElementById("app")
+);

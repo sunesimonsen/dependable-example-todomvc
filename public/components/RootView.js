@@ -8,6 +8,10 @@ import { TodoList } from "./TodoList.js";
 import { Footer } from "./Footer.js";
 
 export class RootView {
+  didMount() {
+    this.context.api.loadTodos();
+  }
+
   render() {
     return html`
       <${Header}>

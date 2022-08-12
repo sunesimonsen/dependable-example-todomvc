@@ -1,10 +1,6 @@
-import {
-  allTodos,
-  createTodo,
-  visibilityFilter,
-  visibleTodos,
-  Todo,
-} from "../public/model.js";
+import { allTodos, visibilityFilter, visibleTodos } from "../public/state.js";
+
+import { Todo } from "../public/models/Todo.js";
 
 import unexpected from "unexpected";
 import unexpectedDependable from "unexpected-dependable";
@@ -25,9 +21,9 @@ describe("visibleTodos", () => {
   describe("with list of todos that is all completed", () => {
     beforeEach(() => {
       allTodos([
-        new Todo({ id: 0, text: "By milk", completed: true }),
-        new Todo({ id: 1, text: "Paint the fence", completed: true }),
-        new Todo({ id: 2, text: "Mow the lawn", completed: true }),
+        Todo.create({ id: 0, text: "By milk", completed: true }),
+        Todo.create({ id: 1, text: "Paint the fence", completed: true }),
+        Todo.create({ id: 2, text: "Mow the lawn", completed: true }),
       ]);
     });
 
@@ -55,9 +51,9 @@ describe("visibleTodos", () => {
   describe("with list of todos that is a mix of active and completed", () => {
     beforeEach(() => {
       allTodos([
-        new Todo({ id: 0, text: "By milk", completed: true }),
-        new Todo({ id: 1, text: "Paint the fence", completed: false }),
-        new Todo({ id: 2, text: "Mow the lawn", completed: true }),
+        Todo.create({ id: 0, text: "By milk", completed: true }),
+        Todo.create({ id: 1, text: "Paint the fence", completed: false }),
+        Todo.create({ id: 2, text: "Mow the lawn", completed: true }),
       ]);
     });
 
@@ -68,7 +64,7 @@ describe("visibleTodos", () => {
 
       it("return the active todos", () => {
         expect(visibleTodos(), "to equal", [
-          new Todo({ id: 1, text: "Paint the fence", completed: false }),
+          Todo.create({ id: 1, text: "Paint the fence", completed: false }),
         ]);
       });
     });
@@ -80,8 +76,8 @@ describe("visibleTodos", () => {
 
       it("returns an array with all completed todos", () => {
         expect(visibleTodos(), "to equal", [
-          new Todo({ id: 0, text: "By milk", completed: true }),
-          new Todo({ id: 2, text: "Mow the lawn", completed: true }),
+          Todo.create({ id: 0, text: "By milk", completed: true }),
+          Todo.create({ id: 2, text: "Mow the lawn", completed: true }),
         ]);
       });
     });

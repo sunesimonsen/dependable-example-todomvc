@@ -1,6 +1,6 @@
 import { html } from "@dependable/view";
 import { computed } from "@dependable/state";
-import { visibilityFilter } from "../model.js";
+import { visibilityFilter } from "../state.js";
 
 export class VisibilityFilter {
   constructor({ value }) {

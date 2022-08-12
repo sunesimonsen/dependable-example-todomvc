@@ -1,5 +1,5 @@
 import { html } from "@dependable/view";
-import { visibleTodos } from "../model.js";
+import { visibleTodos } from "../state.js";
 import { TodoItem } from "./TodoItem.js";
 
 export class TodoList {

@@ -4,16 +4,15 @@ import { EditInput } from "./EditInput.js";
 import { DestroyButton } from "./DestroyButton.js";
 
 export class TodoItem {
-  constructor({ todo }) {
+  constructor() {
     this.onChange = (e) => {
       e.preventDefault();
 
-      todo.toggle();
-      todo.save();
+      this.context.api.toggleTodo(this.props.todo);
     };
 
     this.onDblClick = () => {
-      todo.editing(true);
+      this.props.todo.editing(true);
     };
   }
 

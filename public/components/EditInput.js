@@ -6,7 +6,7 @@ export class EditInput {
       if (e.code === "Enter") {
         todo.text(e.target.value.trim());
         todo.editing(false);
-        todo.save();
+        this.context.api.saveTodo(todo);
         e.target.value = "";
       }
     };

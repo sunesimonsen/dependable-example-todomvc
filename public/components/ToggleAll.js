@@ -1,7 +1,13 @@
 import { html } from "@dependable/view";
-import { activeTodoCount, toggleAllTodos } from "../model.js";
+import { activeTodoCount } from "../state.js";
 
 export class ToggleAll {
+  constructor() {
+    this.toggleAllTodos = () => {
+      this.context.api.toggleAllTodos();
+    };
+  }
+
   render() {
     return html`
       <input
@@ -9,7 +15,7 @@ export class ToggleAll {
         className="toggle-all"
         type="checkbox"
         .checked=${activeTodoCount() === 0}
-        onChange=${toggleAllTodos}
+        onChange=${this.toggleAllTodos}
       />
       <label for="toggle-all">Mark all as complete</label>
     `;

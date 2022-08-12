@@ -1,6 +1,6 @@
 import { html } from "@dependable/view";
 
-import { activeTodoCount } from "../model.js";
+import { activeTodoCount } from "../state.js";
 
 import { VisibilityFilter } from "./VisibilityFilter.js";
 import { ClearCompletedButton } from "./ClearCompletedButton.js";

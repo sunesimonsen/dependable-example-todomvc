@@ -3,7 +3,7 @@ import { html } from "@dependable/view";
 export class DestroyButton {
   constructor({ todo }) {
     this.onClick = () => {
-      todo.destroy();
+      this.context.api.removeTodo(todo);
     };
   }
 
