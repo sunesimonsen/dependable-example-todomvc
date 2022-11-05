@@ -21,7 +21,7 @@
     "unexpected-dependable": "^1.1.0"
   },
   "dependencies": {
-    "@dependable/state": "^0.12.0",
-    "@dependable/view": "^0.9.0"
+    "@dependable/state": "^0.17.0",
+    "@dependable/view": "^0.13.0"
   }
 }

@@ -33,7 +33,7 @@ export class Api {
   }
 
   createTodo({ text, createdAt = new Date().toISOString() }) {
-    const todo = Todo.create({ id: String(this.nextId), text, createdAt });
+    const todo = Todo.create({ id: String(this.nextId()), text, createdAt });
 
     this.saveTodo(todo);
 

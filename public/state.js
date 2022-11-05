@@ -1,9 +1,9 @@
 import { computed, observable } from "@dependable/state";
 import { Todo } from "./models/Todo.js";
 
-export const visibilityFilter = observable("all");
+export const visibilityFilter = observable("all", { id: "visibilityFilter" });
 
-export const allTodos = observable([]);
+export const allTodos = observable([], { id: "todos" });
 
 const sortedTodos = computed(() => Todo.sortByCreatedAt(allTodos()));
 
