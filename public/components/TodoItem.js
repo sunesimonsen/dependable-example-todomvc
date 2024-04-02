@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { classes } from "../utils/classes.js";
 import { EditInput } from "./EditInput.js";
 import { DestroyButton } from "./DestroyButton.js";

@@ -1,4 +1,4 @@
-import { html } from "@dependable/view";
+import { html } from "@dependable/htm";
 import { visibleTodos } from "../state.js";
 import { TodoItem } from "./TodoItem.js";
 
